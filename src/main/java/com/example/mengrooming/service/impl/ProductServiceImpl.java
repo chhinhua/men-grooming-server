@@ -11,6 +11,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -51,5 +52,21 @@ public class ProductServiceImpl implements ProductService {
 
         // convert entity to DTO and return
         return modelMapper.map(newProduct, ProductDto.class);
+    }
+
+    @Override
+    public ProductDto getProductById(long id) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Product", "id", id));
+        return modelMapper.map(product, ProductDto.class);
+    }
+
+    @Override
+    public ProductDto deleteProductById(long id) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Product", "id", id));
+        productRepository.deleteById(id);
+
+        return modelMapper.map(product, ProductDto.class);
     }
 }
