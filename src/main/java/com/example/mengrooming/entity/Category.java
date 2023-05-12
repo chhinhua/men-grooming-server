@@ -20,11 +20,14 @@ import lombok.Setter;
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int id;
+    public long id;
 
     @Column(unique = true)
     private String name;
+
     private String description;
+
     private String slug;
+
     private String image;
 }
