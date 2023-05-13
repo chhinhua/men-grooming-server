@@ -1,9 +1,6 @@
 package com.example.mengrooming.controller;
 
-import com.example.mengrooming.entity.Product;
-import com.example.mengrooming.payload.CategoryDto;
 import com.example.mengrooming.payload.ProductDto;
-import com.example.mengrooming.payload.ProductListWrapper;
 import com.example.mengrooming.service.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -17,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

@@ -11,5 +11,7 @@ public interface ProductService {
 
     ProductDto getProductById(final long id);
 
+    ProductDto updateProductById(final ProductDto productDto, final long id);
+
     ProductDto deleteProductById(final long id);
 }

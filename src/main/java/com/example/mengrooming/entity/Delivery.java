@@ -15,15 +15,14 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "delivery")
 public class Delivery {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int id;
+    private int id;
 
-    public String address;
+    private String address;
 
-    public String phone;
+    private String phone;
 
-    public int totalMoney;
+    private int totalMoney;
 }

@@ -42,4 +42,19 @@ public class CategoryServiceImpl implements CategoryService {
 
         return modelMapper.map(saveCategory, CategoryDto.class);
     }
+
+    @Override
+    public CategoryDto getCategoryById(long id) {
+        return null;
+    }
+
+    @Override
+    public CategoryDto updateCategoryById(CategoryDto productDto, long id) {
+        return null;
+    }
+
+    @Override
+    public CategoryDto deleteCategoryById(long id) {
+        return null;
+    }
 }

@@ -17,28 +17,26 @@ import java.util.Set;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int id;
+    private int id;
 
-    public String name;
-
-    @Column(nullable = false, unique = true)
-    public String email;
+    private String name;
 
     @Column(nullable = false, unique = true)
-    public String username;
+    private String email;
 
-    public String phone;
+    @Column(nullable = false, unique = true)
+    private String username;
 
-    public String avatar;
+    private String phone;
+
+    private String avatar;
 
     @Column(nullable = false)
-    public String password;
+    private String password;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
     private Set<Role> roles;
-
-
 }

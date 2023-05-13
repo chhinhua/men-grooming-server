@@ -61,6 +61,7 @@ public class ProductServiceImpl implements ProductService {
         return modelMapper.map(product, ProductDto.class);
     }
 
+
     @Override
     public ProductDto deleteProductById(long id) {
         Product product = productRepository.findById(id)
@@ -68,5 +69,10 @@ public class ProductServiceImpl implements ProductService {
         productRepository.deleteById(id);
 
         return modelMapper.map(product, ProductDto.class);
+    }
+
+    @Override
+    public ProductDto updateProductById(ProductDto productDto, long id) {
+        return null;
     }
 }
